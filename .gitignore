@@ -1,0 +1,12 @@
+# keep personal data and secrets out of this PUBLIC repo
+profile.json
+tools/profile.yaml
+tools/jobs.csv
+*.key
+.env
+**/.browser_profile/
+**/.venv/
+**/__pycache__/
+*.pyc
+applied_log.csv
+.DS_Store

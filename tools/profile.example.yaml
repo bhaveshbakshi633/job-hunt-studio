@@ -1,0 +1,25 @@
+# Copy to profile.yaml (gitignored) and fill in. Used by apply_assistant.py to
+# auto-fill LinkedIn Easy Apply forms in YOUR browser. Stays on your machine.
+identity:
+  full_name: "Your Name"
+  first_name: "Your"
+  last_name: "Name"
+  email: "you@example.com"
+  phone: "+00 0000000000"
+  location: "City, Country"
+  linkedin: "https://linkedin.com/in/you"
+  github: "https://github.com/you"
+  portfolio: "https://you.github.io"
+resume_path: "/absolute/path/to/your_cv.pdf"
+status:
+  notice_period: "e.g. 60 days"
+  willing_to_relocate: "Yes"
+experience_years:
+  default: 3
+answers:
+  "why do you want": "..."
+  "strength": "..."
+  "salary": "Flexible and open to discussing."
+  "notice": "..."
+defaults:
+  yes_no_default: "yes"

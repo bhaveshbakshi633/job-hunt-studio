@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Hunt Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🎯 Job Hunt Studio</div>
+    <div class="stats" id="stats"></div>
+    <button id="settingsBtn" class="ghost">⚙ Settings</button>
+  </header>
+
+  <section class="controls">
+    <input id="search" type="search" placeholder="Search role or company…" />
+    <select id="market"><option value="">All markets</option></select>
+    <select id="fit">
+      <option value="">All fits</option>
+      <option value="A">A — Excellent</option>
+      <option value="B">B — Strong</option>
+      <option value="C">C — Possible</option>
+    </select>
+    <select id="status">
+      <option value="">All statuses</option>
+      <option>To review</option><option>To apply</option><option>Applied</option>
+      <option>Interview</option><option>Offer</option><option>Rejected</option><option>Skip</option>
+    </select>
+    <button id="exportBtn" class="ghost">⬇ Export applied (CSV)</button>
+  </section>
+
+  <main id="grid" class="grid"></main>
+
+  <!-- Job detail modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" data-close>✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Settings modal -->
+  <div id="settings" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" data-close-settings>✕</button>
+      <h2>Settings</h2>
+      <h3>AI provider (free tiers)</h3>
+      <p class="muted">Your key is stored only in this browser (localStorage) and sent directly to the provider. Never committed.</p>
+      <label>Provider
+        <select id="llmProvider">
+          <option value="groq">Groq (free, fast Llama)</option>
+          <option value="gemini">Google Gemini (AI Studio free)</option>
+          <option value="openrouter">OpenRouter (free models)</option>
+        </select>
+      </label>
+      <label>API key <input id="llmKey" type="password" placeholder="paste your free API key" /></label>
+      <label>Model <input id="llmModel" type="text" placeholder="(optional — sensible default per provider)" /></label>
+      <button id="saveLlm">Save AI settings</button>
+      <hr/>
+      <h3>My profile</h3>
+      <p class="muted">Import your <code>data/profile.json</code> so AI cover-letters and the answer bank are personalised. Stored locally only.</p>
+      <input id="profileFile" type="file" accept="application/json" />
+      <button id="clearProfile" class="ghost">Clear stored profile</button>
+      <p id="profileState" class="muted"></p>
+    </div>
+  </div>
+
+  <script src="llm.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
