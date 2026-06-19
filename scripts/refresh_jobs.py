@@ -3,9 +3,12 @@
 Auto-refresh the job board. Runs in CI every 6h.
 
 Scrapes fresh robotics/embodied-AI postings via the Apify API (token from the
-APIFY_TOKEN env/secret), curates them to the owner's interests with keyword
-scoring, merges into data/jobs.json (dedupe by link, stable ids), and writes it
-back. The workflow commits any change.
+APIFY_TOKEN secret, sent as a Bearer header — never in the URL), then RE-CURATES
+the entire board through scripts/curate.py: word-boundary scoring, noise/gig/non-IC
+exclusion, real market detection, fuzzy dedupe, and an absolute `curated` date.
+
+Because the whole set is re-curated every run, the board can't balloon (the old
+append-only bug) and stale duplicates are collapsed. A hard cap is the backstop.
 
 Stdlib only — no pip install needed.
 """
@@ -15,106 +18,91 @@ import json
 import os
 import sys
 import urllib.request
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from curate import curate  # shared curation logic
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "jobs.json"
 TOKEN = os.environ.get("APIFY_TOKEN", "")
-API = "https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items?token={tok}"
+RUN = "https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items"
+CAP = 300              # hard backstop on board size
+MAX_AGE_DAYS = 45      # drop roles not seen by curation in this long
 
-# (actor, input, market, source). maxItems kept modest to bound cost per run.
 QUERIES = [
-    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "India", "datePosted": "r604800", "limit": 40}, "India", "LinkedIn"),
-    ("valig~linkedin-jobs-scraper", {"title": "Reinforcement Learning", "location": "India", "datePosted": "r604800", "limit": 25}, "India", "LinkedIn"),
-    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "Worldwide", "remote": ["2"], "datePosted": "r604800", "limit": 40}, "Remote/Global", "LinkedIn"),
-    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "Singapore", "datePosted": "r604800", "limit": 25}, "Singapore", "LinkedIn"),
-    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "United Arab Emirates", "datePosted": "r604800", "limit": 25}, "UAE", "LinkedIn"),
-    ("kaix~indeed-scraper", {"keyword": "robotics", "location": "India", "country": "IN", "maxItems": 40, "sort": "date", "searchMode": "basic", "fromDays": "7"}, "India", "Indeed"),
+    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "India", "datePosted": "r604800", "limit": 40}, "LinkedIn"),
+    ("valig~linkedin-jobs-scraper", {"title": "Reinforcement Learning", "location": "India", "datePosted": "r604800", "limit": 25}, "LinkedIn"),
+    ("valig~linkedin-jobs-scraper", {"title": "Humanoid", "location": "Worldwide", "remote": ["2"], "datePosted": "r604800", "limit": 30}, "LinkedIn"),
+    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "Singapore", "datePosted": "r604800", "limit": 25}, "LinkedIn"),
+    ("valig~linkedin-jobs-scraper", {"title": "Robotics Engineer", "location": "United Arab Emirates", "datePosted": "r604800", "limit": 25}, "LinkedIn"),
+    ("kaix~indeed-scraper", {"keyword": "robotics", "location": "India", "country": "IN", "maxItems": 40, "sort": "date", "searchMode": "basic", "fromDays": "7"}, "Indeed"),
 ]
-
-# fit scoring
-A = ["humanoid", "reinforcement learning", "sim-to-real", "sim2real", "isaac", "mujoco",
-     "manipulation", "locomotion", "ros2", "ros ", "controls engineer", "robot learning", "embodied"]
-B = ["robotics", "perception", "slam", "autonomy", "computer vision", "motion planning",
-     "mechatronics", "c++", "control"]
-NOISE = ["rpa", "test automation", "teacher", "faculty", "trainer", "data collector",
-         "business development", "sales", "recruiter", "marketing", "intern", "copywriter"]
 
 
 def fetch(actor: str, payload: dict) -> list[dict]:
-    url = API.format(actor=actor, tok=TOKEN)
     req = urllib.request.Request(
-        url, data=json.dumps(payload).encode(), headers={"Content-Type": "application/json"}
+        RUN.format(actor=actor),
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {TOKEN}"},
     )
-    with urllib.request.urlopen(req, timeout=180) as r:
+    with urllib.request.urlopen(req, timeout=240) as r:
         return json.loads(r.read().decode())
 
 
-def norm(item: dict, market: str, source: str) -> dict | None:
+def norm(item: dict, source: str) -> dict | None:
     if source == "LinkedIn":
-        role = (item.get("title") or "").strip()
-        company = (item.get("companyName") or "").strip()
-        loc = (item.get("location") or "").strip()
-        link = item.get("url") or ""
-        salary = item.get("salary") or ""
-        posted = item.get("postedTimeAgo") or ""
+        role, company = item.get("title"), item.get("companyName")
+        loc, link = item.get("location"), item.get("url")
+        salary, posted = item.get("salary"), item.get("postedTimeAgo")
     else:  # Indeed (kaix)
-        role = ((item.get("title") or {}).get("text") or "").strip()
-        company = ((item.get("company") or {}).get("name") or "").strip()
-        loc = ((item.get("location") or {}).get("formatted") or "").strip()
-        link = (item.get("urls") or {}).get("indeed") or ""
-        salary = (item.get("salary") or {}).get("text") or ""
-        posted = (item.get("dates") or {}).get("age") or ""
+        role = (item.get("title") or {}).get("text")
+        company = (item.get("company") or {}).get("name")
+        loc = (item.get("location") or {}).get("formatted")
+        link = (item.get("urls") or {}).get("indeed")
+        salary = (item.get("salary") or {}).get("text")
+        posted = (item.get("dates") or {}).get("age")
     if not role or not link:
         return None
-    return {"role": role, "company": company, "location": loc, "market": market,
-            "source": source, "salary": salary or "", "posted": posted or "", "link": link, "notes": ""}
-
-
-def fit(role: str) -> str | None:
-    t = role.lower()
-    if any(n in t for n in NOISE):
-        return None
-    if any(k in t for k in A):
-        return "A"
-    if any(k in t for k in B):
-        return "B"
-    return "C"
+    return {"role": role, "company": company, "location": loc, "source": source,
+            "salary": salary or "", "posted": posted or "", "link": link, "notes": ""}
 
 
 def main() -> int:
     if not TOKEN:
         print("APIFY_TOKEN not set — aborting.", file=sys.stderr)
         return 1
-    existing = json.loads(DATA.read_text())
-    jobs = existing["jobs"]
-    by_link = {j["link"]: j for j in jobs}
-    next_id = max((j["id"] for j in jobs), default=0) + 1
-    added = 0
-    for actor, payload, market, source in QUERIES:
+    today = date.today().isoformat()
+    raw = []
+    for actor, payload, source in QUERIES:
         try:
-            items = fetch(actor, payload)
+            for it in fetch(actor, payload):
+                j = norm(it, source)
+                if j:
+                    raw.append(j)
         except Exception as e:
-            print(f"query failed ({actor}/{market}): {e}", file=sys.stderr)
-            continue
-        for it in items:
-            j = norm(it, market, source)
-            if not j or j["link"] in by_link:
-                continue
-            f = fit(j["role"])
-            if not f:
-                continue
-            j["fit"] = f
-            j["id"] = next_id
-            next_id += 1
-            by_link[j["link"]] = j
-            jobs.append(j)
-            added += 1
-    existing["jobs"] = jobs
-    existing["meta"]["generated"] = date.today().isoformat()
-    existing["meta"]["count"] = len(jobs)
-    DATA.write_text(json.dumps(existing, indent=2, ensure_ascii=False) + "\n")
-    print(f"Refresh complete: +{added} new roles, {len(jobs)} total.")
+            print(f"query failed ({actor}): {e}", file=sys.stderr)
+
+    existing = json.loads(DATA.read_text()).get("jobs", [])
+    before = len(existing)
+    # keep existing roles, but expire ones not re-seen for a long time
+    cutoff = (datetime.now(timezone.utc).date()).toordinal() - MAX_AGE_DAYS
+    fresh_links = {j["link"] for j in raw if j.get("link")}
+    kept = [j for j in existing
+            if j.get("link") in fresh_links
+            or date.fromisoformat(j.get("curated", today)).toordinal() >= cutoff]
+
+    merged = curate(kept + raw, today)        # recompute fit, dedupe, drop noise/C
+    merged = merged[:CAP]
+    for i, j in enumerate(merged, 1):
+        j["id"] = i
+
+    out = {"meta": {"owner": "Bhavesh Bakshi", "generated": today,
+                    "source": "Apify (LinkedIn+Indeed), curated", "count": len(merged)},
+           "jobs": merged}
+    DATA.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    print(f"Refresh complete: {before} -> {len(merged)} curated roles "
+          f"({sum(j['fit']=='A' for j in merged)} A, {sum(j['fit']=='B' for j in merged)} B).")
     return 0
 
 

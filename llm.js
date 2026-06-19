@@ -1,12 +1,8 @@
 // Provider-agnostic LLM client. Key lives in localStorage only; calls go straight
 // to the provider from the browser. Free tiers: Groq, Google Gemini, OpenRouter.
 const LLM = {
-  cfg() {
-    return JSON.parse(localStorage.getItem("jobapply_llm") || "{}");
-  },
-  save(cfg) {
-    localStorage.setItem("jobapply_llm", JSON.stringify(cfg));
-  },
+  cfg() { return JSON.parse(localStorage.getItem("jobapply_llm") || "{}"); },
+  save(cfg) { localStorage.setItem("jobapply_llm", JSON.stringify(cfg)); },
   defaults: {
     groq: { url: "https://api.groq.com/openai/v1/chat/completions", model: "llama-3.3-70b-versatile" },
     openrouter: { url: "https://openrouter.ai/api/v1/chat/completions", model: "meta-llama/llama-3.3-70b-instruct:free" },
@@ -18,16 +14,19 @@ const LLM = {
     const provider = c.provider || "groq";
     const d = this.defaults[provider];
     const model = c.model || d.model;
+
     if (provider === "gemini") {
-      const url = `${d.url}/${model}:generateContent?key=${encodeURIComponent(c.key)}`;
-      const r = await fetch(url, {
-        method: "POST", headers: { "Content-Type": "application/json" },
+      // key in a header, never the URL (URLs leak via history/referrer/logs)
+      const r = await fetch(`${d.url}/${model}:generateContent`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-goog-api-key": c.key },
         body: JSON.stringify({ contents: [{ parts: [{ text: system + "\n\n" + user }] }] }),
       });
+      if (!r.ok) throw new Error(await this._err(r));   // check status BEFORE parsing
       const j = await r.json();
-      if (!r.ok) throw new Error(j.error?.message || "Gemini error");
-      return j.candidates?.[0]?.content?.parts?.[0]?.text || "(empty)";
+      return j.candidates?.[0]?.content?.parts?.[0]?.text || "(empty response)";
     }
+
     // OpenAI-compatible (Groq, OpenRouter)
     const r = await fetch(d.url, {
       method: "POST",
@@ -38,8 +37,16 @@ const LLM = {
         temperature: 0.5,
       }),
     });
+    if (!r.ok) throw new Error(await this._err(r));
     const j = await r.json();
-    if (!r.ok) throw new Error(j.error?.message || "LLM error");
-    return j.choices?.[0]?.message?.content || "(empty)";
+    return j.choices?.[0]?.message?.content || "(empty response)";
+  },
+  async _err(r) {
+    let detail = "";
+    try { const j = await r.json(); detail = j.error?.message || JSON.stringify(j.error || j); }
+    catch { detail = (await r.text()).slice(0, 160); }
+    if (r.status === 429) return `Rate limited (429) — free tier throttled, wait a moment.`;
+    if (r.status === 401 || r.status === 403) return `Auth failed (${r.status}) — check your API key.`;
+    return `Request failed (${r.status}). ${detail}`;
   },
 };

@@ -6,7 +6,8 @@ you review and click it yourself.
 
 ## Honest trade-offs
 - LinkedIn's ToS restricts automation; running this risks **account restriction**.
-  Keep volume low, supervise every run, leave `AUTO_SUBMIT = False`.
+  Keep volume low and supervise every run. The tool never clicks Submit for you —
+  that human checkpoint is enforced in code, not a toggle.
 - Only Easy Apply jobs can be automated; external-ATS roles are opened for manual
   completion.
 - Scaffold, not a finished product — selectors break when LinkedIn changes its DOM.

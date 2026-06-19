@@ -7,7 +7,7 @@ Easy Apply, and auto-fills every field it can from profile.yaml. It STOPS at the
 final Review/Submit screen so you read it and click Submit yourself.
 
 What it deliberately does NOT do: it never clicks the final Submit for you
-(unless you flip AUTO_SUBMIT below — not recommended; see README for the why).
+It never clicks the final Submit for you — that checkpoint is enforced by design.
 
 This automates your own account for your own applications. LinkedIn's terms
 restrict automation and aggressively detect it — keep volume low, supervise every
@@ -31,7 +31,9 @@ from playwright.sync_api import sync_playwright  # pip install playwright
 HERE = Path(__file__).parent
 # Persistent browser profile dir — first run, log into LinkedIn manually here.
 USER_DATA_DIR = HERE / ".browser_profile"
-AUTO_SUBMIT = False  # leave False. True = clicks Submit without you looking (ban-risk).
+# There is deliberately NO auto-submit switch. The tool fills the form and always
+# stops for you to click Submit yourself — structurally enforced, not a flag, so
+# it can never mass-submit and get your account banned.
 PER_JOB_PAUSE = 2.0  # seconds between actions — be gentle, don't hammer LinkedIn.
 
 
@@ -154,10 +156,6 @@ def apply_to(page, job: dict, profile: dict) -> str:
         review = page.query_selector("button:has-text('Review')")
         submit = page.query_selector("button:has-text('Submit application')")
         if submit:
-            if AUTO_SUBMIT:
-                submit.click()
-                print("    SUBMITTED (auto).")
-                return "submitted"
             print("    >>> Review screen reached. Check it, then click Submit yourself.")
             input("    Press Enter here once you've submitted (or closed) this one... ")
             return "review-handed-off"
