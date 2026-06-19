@@ -3,7 +3,7 @@
     "owner": "Bhavesh Bakshi",
     "generated": "2026-06-19",
     "source": "Apify (LinkedIn+Indeed), curated",
-    "count": 159
+    "count": 166
   },
   "jobs": [
     {
@@ -391,6 +391,54 @@
       "id": 24
     },
     {
+      "uid": "ea9fef88fa",
+      "role": "Mechatronics and Robotics Technician",
+      "company": "Amazon",
+      "location": "Perris, CA",
+      "market": "Other (relocation)",
+      "remote": false,
+      "fit": "A",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "1 day ago",
+      "curated": "2026-06-19",
+      "link": "https://www.linkedin.com/jobs/view/mechatronics-and-robotics-technician-at-amazon-4419985735",
+      "notes": "Tier A — direct hit: robotics, mechatronics.",
+      "id": 25
+    },
+    {
+      "uid": "513f454481",
+      "role": "Mechatronics & Robotics Tech",
+      "company": "Amazon",
+      "location": "Oxnard, CA",
+      "market": "Other (relocation)",
+      "remote": false,
+      "fit": "A",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "6 days ago",
+      "curated": "2026-06-19",
+      "link": "https://www.linkedin.com/jobs/view/mechatronics-robotics-tech-at-amazon-4428170793",
+      "notes": "Tier A — direct hit: robotics, mechatronics.",
+      "id": 26
+    },
+    {
+      "uid": "61341d8007",
+      "role": "Robotics Researcher, Manipulation",
+      "company": "Menlo Research",
+      "location": "Singapore, Singapore",
+      "market": "Singapore",
+      "remote": false,
+      "fit": "A",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "9 hours ago",
+      "curated": "2026-06-19",
+      "link": "https://sg.linkedin.com/jobs/view/robotics-researcher-manipulation-at-menlo-research-4429639207",
+      "notes": "Tier A — direct hit: manipulation, robotics.",
+      "id": 27
+    },
+    {
       "uid": "0c78bcdc46",
       "role": "Sr Software Robotics Development Engineer",
       "company": "AMD",
@@ -404,7 +452,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/sr-software-robotics-development-engineer%C2%A0%C2%A0-at-amd-4412971260",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 25
+      "id": 28
     },
     {
       "uid": "bdf9b4e186",
@@ -420,7 +468,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=50a62581baaf18d2",
       "notes": "C++ / real-time strength.",
-      "id": 26
+      "id": 29
     },
     {
       "uid": "e5969a6ddf",
@@ -436,7 +484,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-black-coffee-robotics-4424655987",
       "notes": "ROS2 consultancy, remote.",
-      "id": 27
+      "id": 30
     },
     {
       "uid": "49863a9caa",
@@ -452,7 +500,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/engineer-sr-engineer-robotics-at-general-motors-4426351695",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 28
+      "id": 31
     },
     {
       "uid": "28f70b57b0",
@@ -468,7 +516,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-software-engineer-at-unbox-robotics-4422005390",
       "notes": "Warehouse robotics startup.",
-      "id": 29
+      "id": 32
     },
     {
       "uid": "e202e822e6",
@@ -484,7 +532,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-factory-automation-ai-enabled-expert-at-siemens-4427449168",
       "notes": "Near home; low applicants.",
-      "id": 30
+      "id": 33
     },
     {
       "uid": "20511db574",
@@ -500,7 +548,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/senior-software-engineer-mapping-autonomous-vehicles-at-nvidia-4395490218",
       "notes": "SLAM/mapping.",
-      "id": 31
+      "id": 34
     },
     {
       "uid": "c59c1ad235",
@@ -516,7 +564,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/software-engineer-at-applied-intuition-4423969293",
       "notes": "Autonomy stack.",
-      "id": 32
+      "id": 35
     },
     {
       "uid": "9fa29520c8",
@@ -532,7 +580,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/senior-robotics-engineer-4%2B-yrs-at-awign-4424971969",
       "notes": "Matches seniority.",
-      "id": 33
+      "id": 36
     },
     {
       "uid": "05ecaadcac",
@@ -548,7 +596,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-universal-robots-bangalore-india-at-universal-robots-4413607111",
       "notes": "Cobot leader.",
-      "id": 34
+      "id": 37
     },
     {
       "uid": "392b137b1e",
@@ -564,7 +612,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/architect-edge-ai-robotics-at-aptiv-4399861569",
       "notes": "Architect level.",
-      "id": 35
+      "id": 38
     },
     {
       "uid": "7c23d65279",
@@ -580,7 +628,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/senior-robotics-engineer-at-softserve-4422335455",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 36
+      "id": 39
     },
     {
       "uid": "36c3b419ab",
@@ -596,7 +644,7 @@
       "curated": "2026-06-19",
       "link": "https://ch.linkedin.com/jobs/view/robot-platform-engineer-mensch-at-neura-robotics-4422961348",
       "notes": "Humanoid co, EU relocation.",
-      "id": 37
+      "id": 40
     },
     {
       "uid": "80355ae246",
@@ -612,7 +660,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechanical-engineer-robotics-convoy-at-neuralink-4416725231",
       "notes": "Mechanical-leaning.",
-      "id": 38
+      "id": 41
     },
     {
       "uid": "107b52f4e6",
@@ -628,7 +676,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/robotics-manipulator-engineer-system-control-at-hyundai-motor-group-innovation-center-singapore-hmgics-4427468800",
       "notes": "Fresh, <25 applicants.",
-      "id": 39
+      "id": 42
     },
     {
       "uid": "c987a04dd5",
@@ -644,7 +692,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/robotics-engineer-full-stack-at-eureka-robotics-4419377403",
       "notes": "NTU spinoff.",
-      "id": 40
+      "id": 43
     },
     {
       "uid": "78d0ee0582",
@@ -660,7 +708,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/ai-robotics-engineer-at-dsta-4369088916",
       "notes": "May need PR; verify.",
-      "id": 41
+      "id": 44
     },
     {
       "uid": "14a337de2e",
@@ -676,7 +724,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/robotics-systems-engineer-at-certis-4426944021",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 42
+      "id": 45
     },
     {
       "uid": "02914cd218",
@@ -692,7 +740,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.indeed.com/viewjob?jk=87efd416ad2deb57",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 43
+      "id": 46
     },
     {
       "uid": "e692f92811",
@@ -708,7 +756,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.indeed.com/viewjob?jk=64c1bb81fee3ca5c",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 44
+      "id": 47
     },
     {
       "uid": "05798464dc",
@@ -724,7 +772,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.indeed.com/viewjob?jk=5d1c21c5c221bc82",
       "notes": "Major research institute. RL match.",
-      "id": 45
+      "id": 48
     },
     {
       "uid": "eeae943c6f",
@@ -740,7 +788,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/rl-robotics-engineer-at-technology-innovation-institute-4312712102",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 46
+      "id": 49
     },
     {
       "uid": "42f992e1d7",
@@ -756,7 +804,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/robotics-engineer-localization-at-steerai-4419693386",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 47
+      "id": 50
     },
     {
       "uid": "ed29d3875e",
@@ -772,7 +820,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/robotics-system-integration-engineer-at-steerai-4412663683",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 48
+      "id": 51
     },
     {
       "uid": "8b43ff83b0",
@@ -788,7 +836,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/senior-robotics-engineer-at-analog-4300023999",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 49
+      "id": 52
     },
     {
       "uid": "98562fb432",
@@ -804,7 +852,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/senior-research-scientist-robotics-ai-at-bosch-usa-4420168093",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 50
+      "id": 53
     },
     {
       "uid": "12811ca348",
@@ -820,7 +868,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-learning-engineer-at-noble-machines-4427033295",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 51
+      "id": 54
     },
     {
       "uid": "db8d666806",
@@ -836,7 +884,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-ml-research-engineer-founding-at-boost-robotics-4421366250",
       "notes": "Founding role.",
-      "id": 52
+      "id": 55
     },
     {
       "uid": "f1fc4bfdcc",
@@ -852,7 +900,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/senior-solution-architect-physical-ai-medical-and-surgical-robotics-at-nvidia-4418530230",
       "notes": "Surgical robotics overlap.",
-      "id": 53
+      "id": 56
     },
     {
       "uid": "7bd247d0ca",
@@ -868,7 +916,7 @@
       "curated": "2026-06-19",
       "link": "https://ca.linkedin.com/jobs/view/robotics-researcher-physical-ai-at-rockwell-automation-4400582591",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 54
+      "id": 57
     },
     {
       "uid": "9ed8f2d467",
@@ -884,7 +932,7 @@
       "curated": "2026-06-19",
       "link": "https://kr.linkedin.com/jobs/view/ludo-robotics-ai-ml-research-engineer-robotics-2%EB%85%84-%EC%9D%B4%EC%83%81-at-ludo-robotics-4386388310",
       "notes": "2+ yrs.",
-      "id": 55
+      "id": 58
     },
     {
       "uid": "2dd23f8589",
@@ -900,7 +948,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/electrical-controls-robotics-engineer-at-larsen-toubro-4387896711",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 56
+      "id": 59
     },
     {
       "uid": "e9f0207ef6",
@@ -916,7 +964,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-fuji-robotics-india-4425969965",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 57
+      "id": 60
     },
     {
       "uid": "5acebe7335",
@@ -932,7 +980,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-lg-electronics-4427708401",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 58
+      "id": 61
     },
     {
       "uid": "6b3d3015d4",
@@ -948,7 +996,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-smec-automation-4427475741",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 59
+      "id": 62
     },
     {
       "uid": "bc3e19f91c",
@@ -964,7 +1012,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-and-iot-innovation-officer-5%2B-exp-part-time-equity-only-at-kefilo-4426946391",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 60
+      "id": 63
     },
     {
       "uid": "92b06af2ad",
@@ -980,7 +1028,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-algobotix-4426039578",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 61
+      "id": 64
     },
     {
       "uid": "a253ca2c05",
@@ -996,7 +1044,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-%2420-hr-remote-at-crossing-hurdles-4426293482",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 62
+      "id": 65
     },
     {
       "uid": "b78b448674",
@@ -1012,7 +1060,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/senior-engineer-robotics-pick-and-place-sme-at-agratas-%E2%80%93-a-tata-enterprise-4426921728",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 63
+      "id": 66
     },
     {
       "uid": "1bc5c05be7",
@@ -1028,7 +1076,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-set2recruit-4412803090",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 64
+      "id": 67
     },
     {
       "uid": "e6b39bbb78",
@@ -1044,7 +1092,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/robotics-application-engineer-at-edison-smart%C2%AE-4427931836",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 65
+      "id": 68
     },
     {
       "uid": "3fe05cc649",
@@ -1060,7 +1108,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-software-engineer-at-bright-vision-technologies-4427134783",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 66
+      "id": 69
     },
     {
       "uid": "6a91a2e176",
@@ -1076,7 +1124,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-mpac-group-4426955883",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 67
+      "id": 70
     },
     {
       "uid": "c208c95e9f",
@@ -1092,7 +1140,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/robotics-control-engineer-at-eclectic-recruitment-ltd-4425803401",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 68
+      "id": 71
     },
     {
       "uid": "c7b9de9703",
@@ -1108,7 +1156,7 @@
       "curated": "2026-06-19",
       "link": "https://de.linkedin.com/jobs/view/robotics-engineer-m-f-d-industrial-robotics-automation-at-agile-robots-se-4419683167",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 69
+      "id": 72
     },
     {
       "uid": "7323290222",
@@ -1124,7 +1172,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-development-engineer-at-brooksource-4427225110",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 70
+      "id": 73
     },
     {
       "uid": "497e6b3b9c",
@@ -1140,7 +1188,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechatronics-engineer-at-radical-ai-4422710260",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 71
+      "id": 74
     },
     {
       "uid": "1d46c1a9db",
@@ -1156,7 +1204,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-fanuc-america-corporation-4428624041",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 72
+      "id": 75
     },
     {
       "uid": "a001ba7067",
@@ -1172,7 +1220,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/industrial-robotics-engineer-at-divergent-4422746081",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 73
+      "id": 76
     },
     {
       "uid": "04eb0fcd90",
@@ -1188,7 +1236,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/system-engineer-robotics-at-applied-intuition-4426065800",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 74
+      "id": 77
     },
     {
       "uid": "186e364e1d",
@@ -1204,7 +1252,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/robotics-engineer-at-fuse-energy-4426798877",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 75
+      "id": 78
     },
     {
       "uid": "95d233bc97",
@@ -1220,7 +1268,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/engineer-senior-engineer-robotics-at-dsta-4105613163",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 76
+      "id": 79
     },
     {
       "uid": "cbacef9a82",
@@ -1236,7 +1284,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/mechatronics-engineer-at-spectainer-4423102209",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 77
+      "id": 80
     },
     {
       "uid": "6aef0c7df2",
@@ -1252,7 +1300,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/robotics-software-engineer-at-dso-national-laboratories-4260006109",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 78
+      "id": 81
     },
     {
       "uid": "5bfda05b46",
@@ -1268,7 +1316,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/junior-field-application-engineer-robotics-at-autolife-robotics-4427462380",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 79
+      "id": 82
     },
     {
       "uid": "501cb590ad",
@@ -1284,7 +1332,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/software-engineer-decision-planning-algorithm-robotics-at-grab-4426202262",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 80
+      "id": 83
     },
     {
       "uid": "b147ce749e",
@@ -1300,7 +1348,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/autonomous-vehicle-engineer-mechanical-at-venti-4426043736",
       "notes": "Tier B — adjacent: autonomous.",
-      "id": 81
+      "id": 84
     },
     {
       "uid": "c11fabdbcc",
@@ -1316,7 +1364,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/robotics-integration-engineer-m-f-d-at-halian-managed-services-recruitment-agency-contract-staffing-4428034277",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 82
+      "id": 85
     },
     {
       "uid": "10e1be3b10",
@@ -1332,7 +1380,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/senior-robotics-engineer-m-f-d-at-halian-managed-services-recruitment-agency-contract-staffing-4426956672",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 83
+      "id": 86
     },
     {
       "uid": "f2875ceffc",
@@ -1348,7 +1396,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/support-agent-robotics-at-robohub-ae-4425829096",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 84
+      "id": 87
     },
     {
       "uid": "c03392209b",
@@ -1364,7 +1412,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=c0aebd1b202502be",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 85
+      "id": 88
     },
     {
       "uid": "c4c9c0f360",
@@ -1380,7 +1428,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=ac12b467de273a26",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 86
+      "id": 89
     },
     {
       "uid": "2ef12a21ff",
@@ -1396,7 +1444,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=3b6b03224186e8e1",
       "notes": "Tier B — adjacent: robot.",
-      "id": 87
+      "id": 90
     },
     {
       "uid": "fec20e1ae1",
@@ -1412,7 +1460,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=41f5e2ccbbf69013",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 88
+      "id": 91
     },
     {
       "uid": "14c5f1eb62",
@@ -1428,7 +1476,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/slam-engineer-at-wiserli-4426063581",
       "notes": "Tier B — adjacent: slam.",
-      "id": 89
+      "id": 92
     },
     {
       "uid": "da4c360584",
@@ -1444,7 +1492,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/sr-engineer-robotics-at-agratas-%E2%80%93-a-tata-enterprise-4427937003",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 90
+      "id": 93
     },
     {
       "uid": "55d74729a7",
@@ -1460,7 +1508,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/research-analyst-robotics-at-abi-research-4427757752",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 91
+      "id": 94
     },
     {
       "uid": "18ec459bfb",
@@ -1476,7 +1524,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/robotics-software-solutions-engineer-agvs-can-bus-at-alexander-james-recruiting-ltd-4427952178",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 92
+      "id": 95
     },
     {
       "uid": "32ef8cfd3c",
@@ -1492,7 +1540,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-solutions-engineer-%E2%80%93-robotics-data-collection-physical-ai-at-innodata-inc-4426668320",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 93
+      "id": 96
     },
     {
       "uid": "61a9f64926",
@@ -1508,7 +1556,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/lead-software-engineer-%E2%80%93-autonomy-execution-steerai-at-steerai-4426480769",
       "notes": "Tier B — adjacent: autonomy.",
-      "id": 94
+      "id": 97
     },
     {
       "uid": "bd2189122b",
@@ -1524,7 +1572,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=7aa8ab4a3cd22226",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 95
+      "id": 98
     },
     {
       "uid": "4e2ba77730",
@@ -1540,7 +1588,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/senior-autonomy-engineer-c%2B%2B-at-caterpillar-inc-4429541485",
       "notes": "Tier B — adjacent: autonomy.",
-      "id": 96
+      "id": 99
     },
     {
       "uid": "80bb3be010",
@@ -1556,7 +1604,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-sr2-socially-responsible-recruitment-certified-b-corporation%E2%84%A2-4420138071",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 97
+      "id": 100
     },
     {
       "uid": "5ee9aa862b",
@@ -1572,7 +1620,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/hiring-ai-training-specialist-%E2%80%93-autonomous-vehicles-remote-india-at-myremoteteam-inc-4429244172",
       "notes": "Tier B — adjacent: autonomous.",
-      "id": 98
+      "id": 101
     },
     {
       "uid": "1ee27b7b3b",
@@ -1588,7 +1636,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-flexon-technologies-talent360-ai-4429588755",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 99
+      "id": 102
     },
     {
       "uid": "02892a83d6",
@@ -1604,7 +1652,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/founding-robotics-engineer-at-starlife-4427267155",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 100
+      "id": 103
     },
     {
       "uid": "313d04e846",
@@ -1620,7 +1668,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=8963803327d5b53b",
       "notes": "Tier B — adjacent: autonomy.",
-      "id": 101
+      "id": 104
     },
     {
       "uid": "354021e61d",
@@ -1636,7 +1684,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=cf43a7cb6acebe1e",
       "notes": "Tier B — adjacent: robot.",
-      "id": 102
+      "id": 105
     },
     {
       "uid": "f933f9675a",
@@ -1652,7 +1700,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-robx-db-4428406298",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 103
+      "id": 106
     },
     {
       "uid": "58d4114776",
@@ -1668,7 +1716,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/junior-robotics-control-system-engineer-at-best-nanotech-4426917486",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 104
+      "id": 107
     },
     {
       "uid": "c6bc29be21",
@@ -1684,7 +1732,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/founding-robotics-engineer-at-stealth-startup-4428049050",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 105
+      "id": 108
     },
     {
       "uid": "7ca9bec8bc",
@@ -1700,7 +1748,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-automation-engineer-at-tsmc-4366580499",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 106
+      "id": 109
     },
     {
       "uid": "bf906d936c",
@@ -1716,7 +1764,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-field-application-engineer-at-st%C3%A4ubli-4428404230",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 107
+      "id": 110
     },
     {
       "uid": "8e17d491a1",
@@ -1732,7 +1780,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechatronics-engineer-at-vebu-4428084317",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 108
+      "id": 111
     },
     {
       "uid": "f1eed9c0a0",
@@ -1748,7 +1796,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-system-engineer-at-anyware-robotics-4426949163",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 109
+      "id": 112
     },
     {
       "uid": "ca466f3988",
@@ -1764,7 +1812,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/lab-robotics-engineer-at-carnaby-fox-4427727737",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 110
+      "id": 113
     },
     {
       "uid": "52abfc0535",
@@ -1780,7 +1828,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechatronics-engineer-5-at-lam-research-4377942133",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 111
+      "id": 114
     },
     {
       "uid": "f54c6349be",
@@ -1796,7 +1844,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/research-engineer-underwater-robotics-at-national-university-of-singapore-4429797302",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 112
+      "id": 115
     },
     {
       "uid": "395b333121",
@@ -1812,7 +1860,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/research-associate-aerial-robotics-at-nanyang-technological-university-singapore-4423312843",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 113
+      "id": 116
     },
     {
       "uid": "9131d0c78e",
@@ -1828,7 +1876,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/lead-engineer-engineer-counter-unmanned-systems-robotics-automation-unmanne-at-htx-home-team-science-technology-agency-4425751674",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 114
+      "id": 117
     },
     {
       "uid": "3da9e43ebf",
@@ -1844,7 +1892,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=e8b543c8f92958f8",
       "notes": "Tier B — adjacent: robot.",
-      "id": 115
+      "id": 118
     },
     {
       "uid": "a0fe5936ea",
@@ -1860,7 +1908,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=0dd60d94fa91f8b8",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 116
+      "id": 119
     },
     {
       "uid": "2983575d78",
@@ -1876,7 +1924,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-control-engineer-at-smec-automation-4428474713",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 117
+      "id": 120
     },
     {
       "uid": "39234f83f8",
@@ -1892,7 +1940,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robot-offline-programming-engineer-at-cyient-4397896985",
       "notes": "Tier B — adjacent: robot.",
-      "id": 118
+      "id": 121
     },
     {
       "uid": "daf6f1ccb3",
@@ -1908,7 +1956,7 @@
       "curated": "2026-06-19",
       "link": "https://uk.linkedin.com/jobs/view/robotics-researcher-remote-at-crossing-hurdles-4428470059",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 119
+      "id": 122
     },
     {
       "uid": "d666319543",
@@ -1924,7 +1972,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechatronics-engineer-at-kelly-science-engineering-technology-telecom-4426991079",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 120
+      "id": 123
     },
     {
       "uid": "2c69a795b5",
@@ -1940,7 +1988,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-johns-hopkins-applied-physics-laboratory-4423612585",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 121
+      "id": 124
     },
     {
       "uid": "d1ea97c682",
@@ -1956,7 +2004,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-tata-consultancy-services-4409359891",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 122
+      "id": 125
     },
     {
       "uid": "1db1575271",
@@ -1972,7 +2020,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/systems-engineer-2-robotics-at-tennant-company-4419437811",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 123
+      "id": 126
     },
     {
       "uid": "d0ecdb15ec",
@@ -1988,7 +2036,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/senior-robotics-engineer-at-festo-india-4428458750",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 124
+      "id": 127
     },
     {
       "uid": "f45625dbb8",
@@ -2004,7 +2052,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-motion-recruitment-4430128892",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 125
+      "id": 128
     },
     {
       "uid": "3f9b8beaae",
@@ -2020,7 +2068,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-application-engineer-at-bedrock-robotics-4428780380",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 126
+      "id": 129
     },
     {
       "uid": "bb5ef0ebb9",
@@ -2036,7 +2084,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-application-engineer-at-skild-ai-4417107650",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 127
+      "id": 130
     },
     {
       "uid": "1165c07610",
@@ -2052,7 +2100,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-uas-engineer-ii-iii-at-textron-4387796245",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 128
+      "id": 131
     },
     {
       "uid": "712e2b0e5c",
@@ -2068,7 +2116,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechatronics-engineer-at-apera-4427366273",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 129
+      "id": 132
     },
     {
       "uid": "3ce7a52f50",
@@ -2084,7 +2132,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/staff-robotics-automation-engineer-platforms-infrastructure-at-google-4427745395",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 130
+      "id": 133
     },
     {
       "uid": "4c37c1a18e",
@@ -2100,7 +2148,7 @@
       "curated": "2026-06-19",
       "link": "https://de.linkedin.com/jobs/view/robotics-engineer-at-searchability%C2%AE-4428876486",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 131
+      "id": 134
     },
     {
       "uid": "6b76585612",
@@ -2116,7 +2164,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/slam-engineer-at-sunday-4426999095",
       "notes": "Tier B — adjacent: slam.",
-      "id": 132
+      "id": 135
     },
     {
       "uid": "35d3ceaad9",
@@ -2132,7 +2180,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-simulation-engineer-at-persona-ai-4395919022",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 133
+      "id": 136
     },
     {
       "uid": "67d2d1413d",
@@ -2148,7 +2196,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-muks-robotics-%E2%80%93-the-humanoid-company-4428791642",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 134
+      "id": 137
     },
     {
       "uid": "bd0a679326",
@@ -2164,7 +2212,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-bear-robotics-4426969207",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 135
+      "id": 138
     },
     {
       "uid": "f224fe806b",
@@ -2180,7 +2228,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-actin-development-engineer-oil-and-gas-at-tata-consultancy-services-4408905167",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 136
+      "id": 139
     },
     {
       "uid": "e3fd7ca7a1",
@@ -2196,7 +2244,7 @@
       "curated": "2026-06-19",
       "link": "https://jp.linkedin.com/jobs/view/%E3%80%90%E2%98%85robotics-engineer%E3%80%91%EF%BC%88physical-ai%EF%BC%89-jlpt-n2-flextime-hybrid-work-at-g-talent-4426923871",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 137
+      "id": 140
     },
     {
       "uid": "8633e26a3d",
@@ -2212,7 +2260,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/robotics-engineer-at-hivebotics-4429001610",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 138
+      "id": 141
     },
     {
       "uid": "44c70fa469",
@@ -2228,7 +2276,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=3bed6fcf9ab5ab86",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 139
+      "id": 142
     },
     {
       "uid": "2eaf61ee63",
@@ -2244,7 +2292,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=c14af5aeb56cac7e",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 140
+      "id": 143
     },
     {
       "uid": "55dbd53905",
@@ -2260,7 +2308,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=514f18b1995d3694",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 141
+      "id": 144
     },
     {
       "uid": "d3907b19d8",
@@ -2276,7 +2324,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/mechatronics-engineer-at-aule-space-4425796978",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 142
+      "id": 145
     },
     {
       "uid": "fb93a80c92",
@@ -2292,7 +2340,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-engineer-at-norms-technologies-4425312116",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 143
+      "id": 146
     },
     {
       "uid": "348bd82ebf",
@@ -2308,7 +2356,7 @@
       "curated": "2026-06-19",
       "link": "https://de.linkedin.com/jobs/view/engineer-f-m-d-for-robotics-and-sensor-integration-at-helmholtz-zentrum-dresden-rossendorf-hzdr-4429334135",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 144
+      "id": 147
     },
     {
       "uid": "8711a7048d",
@@ -2324,7 +2372,7 @@
       "curated": "2026-06-19",
       "link": "https://pl.linkedin.com/jobs/view/junior-robotics-engineer-modelling-simulation-at-softserve-4419063308",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 145
+      "id": 148
     },
     {
       "uid": "31c7c6db7c",
@@ -2340,7 +2388,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-deployment-engineer-at-vecna-robotics-4430112543",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 146
+      "id": 149
     },
     {
       "uid": "92245c45f9",
@@ -2356,7 +2404,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=241a4da5e1997f66",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 147
+      "id": 150
     },
     {
       "uid": "eaa8443f7b",
@@ -2372,7 +2420,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotic-algorithms-and-controls-engineer-at-intuitive-4430707575",
       "notes": "Tier B — adjacent: controls engineer.",
-      "id": 148
+      "id": 151
     },
     {
       "uid": "4e4ecd8a61",
@@ -2388,7 +2436,7 @@
       "curated": "2026-06-19",
       "link": "https://de.linkedin.com/jobs/view/robotics-architect-modelling-simulation-at-softserve-4389201100",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 149
+      "id": 152
     },
     {
       "uid": "ff12359e5c",
@@ -2404,7 +2452,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/robotics-software-engineer-forward-deployed-at-cpp-ai-4426861127",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 150
+      "id": 153
     },
     {
       "uid": "6ca2ac9140",
@@ -2420,7 +2468,7 @@
       "curated": "2026-06-19",
       "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-livebotics-private-limited-4429608581",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 151
+      "id": 154
     },
     {
       "uid": "cde8d307a5",
@@ -2436,7 +2484,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/software-engineer-robotics-at-feather-robotics-4429376329",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 152
+      "id": 155
     },
     {
       "uid": "60ad337ac2",
@@ -2452,7 +2500,7 @@
       "curated": "2026-06-19",
       "link": "https://www.linkedin.com/jobs/view/mechatronics-engineer-at-hcltech-4427382442",
       "notes": "Tier B — adjacent: mechatronics.",
-      "id": 153
+      "id": 156
     },
     {
       "uid": "50ca303fc0",
@@ -2468,7 +2516,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/robotics-research-engineer-remote-at-hire-feed-4429618359",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 154
+      "id": 157
     },
     {
       "uid": "927a6857f2",
@@ -2484,7 +2532,7 @@
       "curated": "2026-06-19",
       "link": "https://sg.linkedin.com/jobs/view/mechanical-engineer-robotics-at-menlo-research-4429640540",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 155
+      "id": 158
     },
     {
       "uid": "e6477b9361",
@@ -2500,7 +2548,7 @@
       "curated": "2026-06-19",
       "link": "https://ae.linkedin.com/jobs/view/post-doctoral-associate-in-the-center-for-artificial-intelligence-and-robotics-cair-dr-farshad-khorrami-at-new-york-university-abu-dhabi-4417151415",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 156
+      "id": 159
     },
     {
       "uid": "5a40a2cfb5",
@@ -2516,7 +2564,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=e4d47b4a9f3d4ce2",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 157
+      "id": 160
     },
     {
       "uid": "9f09045e5a",
@@ -2532,7 +2580,7 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=ca49986ce69541ef",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 158
+      "id": 161
     },
     {
       "uid": "a3be81103d",
@@ -2548,7 +2596,71 @@
       "curated": "2026-06-19",
       "link": "https://in.indeed.com/viewjob?jk=49b812d3d580e1ff",
       "notes": "Tier B — adjacent: robotics.",
-      "id": 159
+      "id": 162
+    },
+    {
+      "uid": "3488889176",
+      "role": "Senior Robotics Engineer",
+      "company": "Wastefull Insights",
+      "location": "Vadodara, Gujarat, India",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "2 days ago",
+      "curated": "2026-06-19",
+      "link": "https://in.linkedin.com/jobs/view/senior-robotics-engineer-at-wastefull-insights-4427354032",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 163
+    },
+    {
+      "uid": "15ad8b724e",
+      "role": "Sr. Automation Engineer (Robotics)",
+      "company": "CEVA Logistics",
+      "location": "United States",
+      "market": "Other (relocation)",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "7 minutes ago",
+      "curated": "2026-06-19",
+      "link": "https://www.linkedin.com/jobs/view/sr-automation-engineer-robotics-at-ceva-logistics-4417270091",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 164
+    },
+    {
+      "uid": "30c32b2571",
+      "role": "Robotics AI Engineer",
+      "company": "Menlo Research",
+      "location": "Singapore, Singapore",
+      "market": "Singapore",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "9 hours ago",
+      "curated": "2026-06-19",
+      "link": "https://sg.linkedin.com/jobs/view/robotics-ai-engineer-at-menlo-research-4429637266",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 165
+    },
+    {
+      "uid": "741b47fc28",
+      "role": "Robotics Machine Design Engineer",
+      "company": "LAB AUTOMATE TECHNOLOGIES INC",
+      "location": "Vadodara, Gujarat",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "Indeed",
+      "salary": "₹16,000 - ₹24,000 a month",
+      "posted": "Just posted",
+      "curated": "2026-06-19",
+      "link": "https://in.indeed.com/viewjob?jk=d0fe0e5aef443614",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 166
     }
   ]
 }
