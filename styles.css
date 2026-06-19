@@ -9,7 +9,17 @@
 *{ box-sizing:border-box; }
 body{ margin:0; background:var(--bg); color:var(--text);
   font:var(--t-md)/1.55 ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
-:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:6px; }
+/* strong, high-contrast keyboard focus ring on every interactive element */
+:focus-visible{ outline:3px solid var(--accent); outline-offset:2px; border-radius:6px;
+  box-shadow:0 0 0 5px rgba(15,18,22,.85); }
+/* main region only needs the ring when reached via the skip link, not a persistent box */
+#grid:focus-visible{ box-shadow:none; }
+
+/* skip-to-content: off-screen until focused, then slides into view (WCAG 2.4.1) */
+.skip-link{ position:absolute; left:var(--s2); top:-56px; z-index:20; background:var(--accent);
+  color:#1a1205; padding:9px 14px; border-radius:8px; font-weight:600; font-size:var(--t-sm);
+  text-decoration:none; transition:top .14s ease; }
+.skip-link:focus{ top:var(--s2); }
 
 .topbar{ display:flex; align-items:center; gap:var(--s4); padding:var(--s3) var(--s5);
   background:var(--panel); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:5; }
@@ -17,26 +27,60 @@ body{ margin:0; background:var(--bg); color:var(--text);
 .stats{ display:flex; gap:var(--s5); flex:1; flex-wrap:wrap; font-size:var(--t-sm); color:var(--muted); }
 .stats b{ color:var(--text); font-size:var(--t-lg); font-weight:700; margin-right:2px; }
 
+/* generic visibility toggle (JS-driven); kept simple so any element can opt in */
+.hidden{ display:none !important; }
+
+/* first-run hint — calm panel with an amber accent edge; dismissal is remembered in localStorage */
+.hint{ display:flex; align-items:center; gap:var(--s4); flex-wrap:wrap;
+  margin:var(--s4) var(--s5) 0; padding:var(--s3) var(--s4);
+  background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:10px; }
+.hint p{ margin:0; flex:1; min-width:240px; font-size:var(--t-sm); color:var(--muted); }
+.hint p strong{ color:var(--text); font-weight:650; }
+.hint button{ white-space:nowrap; }
+
 .controls{ display:flex; gap:var(--s2); padding:var(--s4) var(--s5); flex-wrap:wrap; align-items:center; }
 .controls input,.controls select{ background:var(--panel2); color:var(--text); border:1px solid var(--line);
   border-radius:8px; padding:9px 12px; font-size:var(--t-sm); }
 #search{ flex:1; min-width:180px; }
 .count{ color:var(--muted); font-size:var(--t-sm); margin-left:auto; }
 button{ background:var(--accent); color:#1a1205; border:0; border-radius:8px; padding:9px 14px;
-  cursor:pointer; font-size:var(--t-sm); font-weight:600; }
+  cursor:pointer; font-size:var(--t-sm); font-weight:600; transition:background .12s,transform .08s,border-color .12s,color .12s; }
 button:hover{ background:var(--accentd); }
+button:active{ transform:translateY(1px); }
+/* ghost keeps its outline on hover instead of filling amber — quieter, still clearly live */
 button.ghost{ background:transparent; border:1px solid var(--line); color:var(--text); font-weight:500; }
+button.ghost:hover{ background:rgba(232,163,61,.10); border-color:var(--accent); color:var(--accent); }
+
+/* control fields lift their border on hover so the whole toolbar feels interactive */
+.controls input:hover,.controls select:hover{ border-color:var(--muted); }
+
+/* Fit legend — decodes the A/B edge + badge colours next to the filters */
+.fitlegend{ display:flex; align-items:center; gap:var(--s4); flex-wrap:wrap;
+  padding:0 var(--s5) var(--s4); margin-top:calc(-1 * var(--s2)); font-size:var(--t-xs); color:var(--muted); }
+.fitlegend-label{ text-transform:uppercase; letter-spacing:.08em; font-weight:600; }
+.fitkey{ display:inline-flex; align-items:center; gap:var(--s2); }
+.fitdot{ width:18px; height:18px; border-radius:5px; display:grid; place-items:center;
+  font-size:var(--t-xs); font-weight:800; color:#0f1216; }
+.fitdot.fitA{ background:var(--fitA); }
+.fitdot.fitB{ background:var(--fitB); }
 
 .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:var(--s3);
   padding:0 var(--s5) var(--s6); }
-.loading,.empty{ color:var(--muted); padding:var(--s6); text-align:center; grid-column:1/-1; }
-.empty button{ margin-top:var(--s3); }
+/* empty / loading: a calm dashed panel rather than bare text, so a no-results view still reads as deliberate */
+.loading,.empty{ color:var(--muted); padding:var(--s6) var(--s5); text-align:center; grid-column:1/-1;
+  border:1px dashed var(--line); border-radius:12px; background:var(--panel); }
+.loading{ border-style:solid; border-color:transparent; background:transparent; }
+.empty p{ margin:0; font-size:var(--t-md); color:var(--text); }
+.empty button{ margin-top:var(--s4); }
 
 /* card is a real <button> for keyboard access */
 .card{ position:relative; display:block; width:100%; text-align:left; background:var(--panel);
   border:1px solid var(--line); border-left:3px solid var(--line); border-radius:10px;
-  padding:var(--s3) var(--s4); cursor:pointer; color:inherit; font:inherit; transition:transform .12s,border-color .12s; }
-.card:hover{ border-color:var(--accent); transform:translateY(-2px); }
+  padding:var(--s3) var(--s4); cursor:pointer; color:inherit; font:inherit;
+  transition:transform .12s,border-color .12s,box-shadow .12s; }
+.card:hover{ border-color:var(--accent); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.30); }
+.card:active{ transform:translateY(0); box-shadow:0 2px 6px rgba(0,0,0,.24); }
 .fitedgeA{ border-left-color:var(--fitA); }
 .fitedgeB{ border-left-color:var(--fitB); }
 .card h3{ margin:2px 0 2px; font-size:var(--t-md); font-weight:650; padding-right:28px; line-height:1.3; }
@@ -54,13 +98,20 @@ button.ghost{ background:transparent; border:1px solid var(--line); color:var(--
 .st-Rejected,.st-Skip{ background:rgba(255,107,107,.15); color:var(--bad); }
 .st-Toapply,.st-Interview{ background:rgba(232,163,61,.18); color:var(--accent); }
 
-.modal{ position:fixed; inset:0; background:rgba(0,0,0,.66); display:flex; align-items:center;
-  justify-content:center; padding:var(--s5) var(--s4); overflow:auto; z-index:10; }
+.modal{ position:fixed; inset:0; background:rgba(0,0,0,.66); backdrop-filter:blur(3px);
+  display:flex; align-items:center; justify-content:center; padding:var(--s5) var(--s4); overflow:auto; z-index:10; }
 .modal.hidden{ display:none; }
 .modal-card{ background:var(--panel); border:1px solid var(--line); border-radius:14px; max-width:720px;
-  width:100%; padding:var(--s5); position:relative; }
-.close{ position:absolute; top:12px; right:12px; background:transparent; border:0; color:var(--muted); font-size:18px; }
-.modal h2{ margin:0 0 2px; font-size:var(--t-xl); }
+  width:100%; padding:var(--s5) var(--s5) var(--s6); position:relative;
+  box-shadow:0 24px 64px rgba(0,0,0,.55); animation:modal-in .16s ease both; }
+@keyframes modal-in{ from{ opacity:0; transform:translateY(10px) scale(.99); } to{ opacity:1; transform:none; } }
+/* close sits clear of the title and gets its own quiet hover (not the amber button fill) */
+.close{ position:absolute; top:10px; right:10px; width:34px; height:34px; line-height:1;
+  display:grid; place-items:center; background:transparent; border:0; border-radius:8px;
+  color:var(--muted); font-size:18px; font-weight:600; }
+.close:hover{ background:var(--panel2); color:var(--text); }
+.close:active{ transform:translateY(1px); }
+.modal h2{ margin:0 0 var(--s1); font-size:var(--t-xl); line-height:1.25; padding-right:var(--s6); }
 .modal h3{ font-size:var(--t-md); color:var(--accent); margin:var(--s4) 0 var(--s2); }
 .modal label{ display:block; margin:var(--s3) 0 var(--s1); color:var(--muted); font-size:var(--t-sm); }
 .modal label.inline{ display:inline-flex; gap:var(--s2); align-items:center; margin:0; }
@@ -75,8 +126,26 @@ textarea{ min-height:190px; font:var(--t-sm)/1.5 ui-monospace,monospace; resize:
 hr{ border:0; border-top:1px solid var(--line); margin:var(--s4) 0; }
 a{ color:var(--link); } code{ background:var(--panel2); padding:1px 5px; border-radius:4px; }
 
+/* resilience toast — fixed, high-contrast notice for storage/backup events; hidden via .hidden */
+.toast{ position:fixed; left:50%; bottom:var(--s5); transform:translateX(-50%); z-index:30;
+  max-width:min(560px,calc(100vw - var(--s5))); padding:var(--s3) var(--s4);
+  background:var(--panel2); color:var(--text); border:1px solid var(--line);
+  border-left:3px solid var(--accent); border-radius:10px; font-size:var(--t-sm);
+  box-shadow:0 12px 32px rgba(0,0,0,.45); }
+
+/* honour reduced-motion: drop card hover lift/transition and the skip-link slide */
+@media (prefers-reduced-motion: reduce){
+  .card,button{ transition:none; }
+  .card:hover,.card:active,button:active,.close:active{ transform:none; }
+  .skip-link{ transition:none; }
+  .modal-card{ animation:none; }
+}
+
 @media (max-width:640px){
-  .topbar,.controls,.grid{ padding-left:var(--s4); padding-right:var(--s4); }
+  .topbar,.controls,.fitlegend,.grid{ padding-left:var(--s4); padding-right:var(--s4); }
+  .hint{ margin-left:var(--s4); margin-right:var(--s4); }
   .grid{ grid-template-columns:1fr; }
   .controls > *{ flex:1 1 auto; } .count{ margin-left:0; }
+  /* the legend keeps its natural width so the dots and labels don't stretch */
+  .fitlegend{ row-gap:var(--s2); }
 }

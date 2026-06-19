@@ -8,19 +8,24 @@ const LLM = {
     openrouter: { url: "https://openrouter.ai/api/v1/chat/completions", model: "meta-llama/llama-3.3-70b-instruct:free" },
     gemini: { url: "https://generativelanguage.googleapis.com/v1beta/models", model: "gemini-2.0-flash" },
   },
-  async chat(system, user) {
+  async chat(system, user, opts = {}) {
     const c = this.cfg();
     if (!c.key) throw new Error("No API key set — open Settings and add a free key.");
     const provider = c.provider || "groq";
     const d = this.defaults[provider];
     const model = c.model || d.model;
+    // caller may steer creativity (e.g. cover-letter tone); fall back to a sober default
+    const temperature = typeof opts.temperature === "number" ? opts.temperature : 0.5;
 
     if (provider === "gemini") {
       // key in a header, never the URL (URLs leak via history/referrer/logs)
       const r = await fetch(`${d.url}/${model}:generateContent`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-goog-api-key": c.key },
-        body: JSON.stringify({ contents: [{ parts: [{ text: system + "\n\n" + user }] }] }),
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: system + "\n\n" + user }] }],
+          generationConfig: { temperature },
+        }),
       });
       if (!r.ok) throw new Error(await this._err(r));   // check status BEFORE parsing
       const j = await r.json();
@@ -34,7 +39,7 @@ const LLM = {
       body: JSON.stringify({
         model,
         messages: [{ role: "system", content: system }, { role: "user", content: user }],
-        temperature: 0.5,
+        temperature,
       }),
     });
     if (!r.ok) throw new Error(await this._err(r));

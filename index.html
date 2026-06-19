@@ -3,16 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.groq.com https://openrouter.ai https://generativelanguage.googleapis.com; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <!-- no-referrer: never leak this page's URL to outbound link clicks or LLM API calls -->
+  <meta name="referrer" content="no-referrer" />
+  <!-- style-src is 'self' only (no 'unsafe-inline'): all styling lives in styles.css; no inline/CSSOM styles exist -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.groq.com https://openrouter.ai https://generativelanguage.googleapis.com; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'" />
   <title>Job Hunt Studio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- bypass block (WCAG 2.4.1): reveals on keyboard focus, jumps past the toolbar to results -->
+  <a class="skip-link" href="#grid">Skip to results</a>
   <header class="topbar">
     <div class="brand"><span aria-hidden="true">◆</span> Job Hunt Studio</div>
     <div class="stats" id="stats" role="status" aria-live="polite"></div>
     <button id="settingsBtn" class="ghost" aria-haspopup="dialog">Settings</button>
   </header>
+
+  <!-- first-run hint: shown once, dismissal remembered in localStorage (no inline handlers — wired in app.js) -->
+  <div id="hint" class="hint hidden" role="region" aria-label="Getting started">
+    <p><strong>New here?</strong> Use the <strong>filters</strong> below to narrow by market, fit, or status; <strong>click any card</strong> to see details and track your status; and add a <strong>free AI key</strong> in Settings to generate tailored cover letters.</p>
+    <button id="hintDismiss" class="ghost">Got it</button>
+  </div>
 
   <section class="controls" role="search">
     <input id="search" type="search" aria-label="Search role or company" placeholder="Search role or company…" />
@@ -34,10 +45,22 @@
       <option value="status">Sort: Status</option>
     </select>
     <button id="exportBtn" class="ghost">Export applied (CSV)</button>
+    <button id="backupBtn" class="ghost">Backup status (JSON)</button>
+    <button id="importStatusBtn" class="ghost" aria-haspopup="false">Import status (JSON)</button>
+    <!-- hidden picker proxied by the button above so there are no inline handlers (CSP-safe) -->
+    <input id="importStatusFile" type="file" accept="application/json,.json" class="hidden" tabindex="-1" aria-hidden="true" />
+    <button id="clearFilters" class="ghost hidden">Clear filters</button>
     <span id="count" class="count" aria-live="polite"></span>
   </section>
 
-  <main id="grid" class="grid" aria-busy="true"><p class="loading">Loading roles…</p></main>
+  <!-- decodes the fit edge/badge colours so the A/B scale is legible without opening a card -->
+  <div class="fitlegend">
+    <span class="fitlegend-label">Fit</span>
+    <span class="fitkey"><span class="fitdot fitA">A</span> Excellent</span>
+    <span class="fitkey"><span class="fitdot fitB">B</span> Strong</span>
+  </div>
+
+  <main id="grid" class="grid" tabindex="-1" aria-label="Job results" aria-busy="true"><p class="loading">Loading roles…</p></main>
 
   <!-- Job detail modal -->
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -74,6 +97,9 @@
       <p id="profileState" class="muted" aria-live="polite"></p>
     </div>
   </div>
+
+  <!-- transient resilience notices (quota / backup / restore); text set in app.js, styled in styles.css -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
   <script src="llm.js"></script>
   <script src="app.js"></script>

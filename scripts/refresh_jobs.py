@@ -16,13 +16,16 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
+import unicodedata
 import urllib.request
 from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from curate import curate  # shared curation logic
+from validate_jobs import validate  # data-quality gate (runs after write)
 
 DATA = Path(__file__).resolve().parent.parent / "data" / "jobs.json"
 TOKEN = os.environ.get("APIFY_TOKEN", "")
@@ -50,6 +53,41 @@ def fetch(actor: str, payload: dict) -> list[dict]:
         return json.loads(r.read().decode())
 
 
+def _clean_text(value: object) -> str:
+    """Single-line, control-char-free text from an untrusted scraped field.
+
+    Scraped strings can carry C0/C1 control bytes, ANSI escapes, or Unicode
+    bidi-override/format characters (a known display-spoofing vector). None of
+    those belong in a role/company/location string, so they are dropped before
+    the value can reach jobs.json and the board. Whitespace (incl. tabs and
+    newlines) collapses to single spaces.
+    """
+    if not isinstance(value, str):
+        return ""
+    out = []
+    for ch in value:
+        if unicodedata.category(ch) in ("Cc", "Cf"):   # control / format chars
+            if ch in "\t\n\r":
+                out.append(" ")                          # keep word separation
+            continue                                     # otherwise drop entirely
+        out.append(ch)
+    return re.sub(r"\s+", " ", "".join(out)).strip()
+
+
+def _clean_link(value: object) -> str | None:
+    """Return an http(s)-only, control-char- and whitespace-free URL, else None.
+
+    Mirrors curate.clean_link as defence-in-depth: a non-string, non-http(s),
+    or mangled link never reaches the merge/curation stage.
+    """
+    if not isinstance(value, str):
+        return None
+    stripped = "".join(ch for ch in value
+                       if unicodedata.category(ch) not in ("Cc", "Cf"))
+    link = re.sub(r"\s+", "", stripped)                  # a URL has no internal whitespace
+    return link if link.startswith(("http://", "https://")) else None
+
+
 def norm(item: dict, source: str) -> dict | None:
     if source == "LinkedIn":
         role, company = item.get("title"), item.get("companyName")
@@ -62,10 +100,14 @@ def norm(item: dict, source: str) -> dict | None:
         link = (item.get("urls") or {}).get("indeed")
         salary = (item.get("salary") or {}).get("text")
         posted = (item.get("dates") or {}).get("age")
+    # sanitise every field at the boundary — before anything downstream sees it
+    role, company = _clean_text(role), _clean_text(company)
+    link = _clean_link(link)
     if not role or not link:
         return None
-    return {"role": role, "company": company, "location": loc, "source": source,
-            "salary": salary or "", "posted": posted or "", "link": link, "notes": ""}
+    return {"role": role, "company": company, "location": _clean_text(loc),
+            "source": source, "salary": _clean_text(salary),
+            "posted": _clean_text(posted), "link": link, "notes": ""}
 
 
 def main() -> int:
@@ -103,6 +145,14 @@ def main() -> int:
     DATA.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(f"Refresh complete: {before} -> {len(merged)} curated roles "
           f"({sum(j['fit']=='A' for j in merged)} A, {sum(j['fit']=='B' for j in merged)} B).")
+
+    # data-quality gate — fail the run (and CI) rather than ship a broken board
+    errors = validate(out)
+    if errors:
+        print(f"Validation FAILED: {len(errors)} issue(s) in the written board:", file=sys.stderr)
+        for e in errors:
+            print(f"  - {e}", file=sys.stderr)
+        return 1
     return 0
 
 
