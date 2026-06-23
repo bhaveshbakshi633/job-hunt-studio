@@ -3,7 +3,7 @@
     "owner": "Bhavesh Bakshi",
     "generated": "2026-06-23",
     "source": "Apify (LinkedIn+Indeed), curated",
-    "count": 222
+    "count": 224
   },
   "jobs": [
     {
@@ -3557,6 +3557,38 @@
       "link": "https://in.indeed.com/viewjob?jk=03bd0d455ba6e9b2",
       "notes": "Tier B — adjacent: robotics.",
       "id": 222
+    },
+    {
+      "uid": "8bc848e7ca",
+      "role": "Robotics System Integration Engineer (m/f/d)",
+      "company": "Halian | Managed Services, Recruitment Agency & Contract Staffing",
+      "location": "Abu Dhabi Emirate, United Arab Emirates",
+      "market": "UAE",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "1 hour ago",
+      "curated": "2026-06-23",
+      "link": "https://ae.linkedin.com/jobs/view/robotics-system-integration-engineer-m-f-d-at-halian-managed-services-recruitment-agency-contract-staffing-4431296614",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 223
+    },
+    {
+      "uid": "5d90ab6254",
+      "role": "Lead System Architect - Autonomous Vehicle",
+      "company": "SteerAI",
+      "location": "Abu Dhabi, Abu Dhabi Emirate, United Arab Emirates",
+      "market": "UAE",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "9 hours ago",
+      "curated": "2026-06-23",
+      "link": "https://ae.linkedin.com/jobs/view/lead-system-architect-autonomous-vehicle-at-steerai-4432249053",
+      "notes": "Tier B — adjacent: autonomous.",
+      "id": 224
     }
   ]
 }
