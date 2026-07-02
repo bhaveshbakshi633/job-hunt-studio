@@ -3,7 +3,7 @@
     "owner": "Bhavesh Bakshi",
     "generated": "2026-07-02",
     "source": "Apify (LinkedIn+Indeed), curated",
-    "count": 297
+    "count": 300
   },
   "jobs": [
     {
@@ -4757,6 +4757,54 @@
       "link": "https://in.indeed.com/viewjob?jk=3323b687de5a6268",
       "notes": "Tier B — adjacent: robotics.",
       "id": 297
+    },
+    {
+      "uid": "f6bdcd6616",
+      "role": "Robotics Engineer",
+      "company": "TechQware",
+      "location": "Noida, Uttar Pradesh, India",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "4 days ago",
+      "curated": "2026-07-02",
+      "link": "https://in.linkedin.com/jobs/view/robotics-engineer-at-techqware-4431044448",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 298
+    },
+    {
+      "uid": "1a5f3325ce",
+      "role": "Technical Lead / Founding Builder – Robotics / IoT",
+      "company": "Hedron Brands and Consulting Pvt Limited",
+      "location": "Pune Division, Maharashtra, India",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "2 hours ago",
+      "curated": "2026-07-02",
+      "link": "https://in.linkedin.com/jobs/view/technical-lead-founding-builder-%E2%80%93-robotics-iot-at-hedron-brands-and-consulting-pvt-limited-4435226026",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 299
+    },
+    {
+      "uid": "7e834a0b64",
+      "role": "Mechatronics Engineer",
+      "company": "Analog Devices",
+      "location": "Gandhinagar, Gujarat, India",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "6 days ago",
+      "curated": "2026-07-02",
+      "link": "https://in.linkedin.com/jobs/view/mechatronics-engineer-at-analog-devices-4432978763",
+      "notes": "Tier B — adjacent: mechatronics.",
+      "id": 300
     }
   ]
 }
