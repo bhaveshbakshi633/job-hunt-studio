@@ -3,7 +3,7 @@
     "owner": "Bhavesh Bakshi",
     "generated": "2026-07-02",
     "source": "Apify (LinkedIn+Indeed), curated",
-    "count": 291
+    "count": 297
   },
   "jobs": [
     {
@@ -4661,6 +4661,102 @@
       "link": "https://in.indeed.com/viewjob?jk=24cb4f4d054e863d",
       "notes": "Tier B — adjacent: robotics.",
       "id": 291
+    },
+    {
+      "uid": "3bfe60cfb8",
+      "role": "Senior AI/ML Engineer with Robotics Specialization",
+      "company": "Hewlett Packard Enterprise",
+      "location": "Singapore, Singapore",
+      "market": "Singapore",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "9 hours ago",
+      "curated": "2026-07-02",
+      "link": "https://sg.linkedin.com/jobs/view/senior-ai-ml-engineer-with-robotics-specialization-at-hewlett-packard-enterprise-4434638433",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 292
+    },
+    {
+      "uid": "74f2567c24",
+      "role": "Senior Robotics Software Engineer",
+      "company": "Dyson",
+      "location": "Singapore, Singapore",
+      "market": "Singapore",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "3 days ago",
+      "curated": "2026-07-02",
+      "link": "https://sg.linkedin.com/jobs/view/senior-robotics-software-engineer-at-dyson-4434440855",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 293
+    },
+    {
+      "uid": "6fa2e50851",
+      "role": "Robotics Engineer (Remote)",
+      "company": "Quik Hire Staffing",
+      "location": "United Arab Emirates",
+      "market": "UAE",
+      "remote": false,
+      "fit": "B",
+      "source": "LinkedIn",
+      "salary": "",
+      "posted": "3 hours ago",
+      "curated": "2026-07-02",
+      "link": "https://ae.linkedin.com/jobs/view/robotics-engineer-remote-at-quik-hire-staffing-4436302852",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 294
+    },
+    {
+      "uid": "a6cb5c6254",
+      "role": "Deployment Engineer (Robotics Engineer)",
+      "company": "Gridbots Technologies Pvt Ltd",
+      "location": "Ahmedabad, Gujarat",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "Indeed",
+      "salary": "₹10,000 - ₹25,000 a month",
+      "posted": "Just posted",
+      "curated": "2026-07-02",
+      "link": "https://in.indeed.com/viewjob?jk=dbf4494d7545d30b",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 295
+    },
+    {
+      "uid": "f0d6fe19a8",
+      "role": "Founding Mechanical Engineer — Robotics",
+      "company": "Exantro",
+      "location": "Bengaluru, Karnataka",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "Indeed",
+      "salary": "₹10,00,000 - ₹18,00,000 a year",
+      "posted": "Just posted",
+      "curated": "2026-07-02",
+      "link": "https://in.indeed.com/viewjob?jk=c6decbca17e5387e",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 296
+    },
+    {
+      "uid": "d42197bd9c",
+      "role": "AI & Robotics",
+      "company": "Aspire Groups",
+      "location": "Itawa, Jaipur, Rajasthan",
+      "market": "India",
+      "remote": false,
+      "fit": "B",
+      "source": "Indeed",
+      "salary": "",
+      "posted": "Just posted",
+      "curated": "2026-07-02",
+      "link": "https://in.indeed.com/viewjob?jk=3323b687de5a6268",
+      "notes": "Tier B — adjacent: robotics.",
+      "id": 297
     }
   ]
 }
